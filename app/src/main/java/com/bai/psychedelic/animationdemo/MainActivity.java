@@ -1,9 +1,11 @@
 package com.bai.psychedelic.animationdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
@@ -39,7 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.main_btn_alpha:
-                animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
+//                animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
+//                animation = new AlphaAnimation(1,0);
+                animation.setDuration(100);
+                animation.setRepeatMode(Animation.RESTART);
+                animation.setRepeatCount(100);
                 mImageView.startAnimation(animation);
                 Log.d(TAG, "onClick: main_btn_alpha startAnimation");
                 break;
@@ -54,9 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                translateAnimation.setRepeatMode(Animation.RESTART);
 //                mImageView.startAnimation(translateAnimation);
                 animation = AnimationUtils.loadAnimation(this,R.anim.translate);
-                animation.setFillBefore(false);
-                animation.setFillAfter(true);
                 mImageView.startAnimation(animation);
+                break;
+            case R.id.main_btn_start_activity:
+                Intent intent = new Intent(this,Main2Activity.class);
+                startActivity(intent);
                 break;
         }
         if (animation!=null){

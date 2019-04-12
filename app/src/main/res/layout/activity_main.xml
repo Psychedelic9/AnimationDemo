@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+    <Button
+        android:id="@+id/main_btn_start_activity"
+        android:text="启动下一个Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"/>
     <Button
         android:id="@+id/main_btn_alpha"
         android:layout_width="wrap_content"

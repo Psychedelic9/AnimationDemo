@@ -6,4 +6,11 @@
         android:toXDelta="200"
         android:toYDelta="200"
         android:duration="1000"/>
+    <rotate
+        android:fromDegrees="0"
+        android:pivotY="50%"
+        android:pivotX="50%"
+        android:toDegrees="+360"
+        android:duration="1000"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
 </set>
