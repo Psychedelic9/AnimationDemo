@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.main_btn_alpha:
-//                animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
+                animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
 //                animation = new AlphaAnimation(1,0);
-                animation.setDuration(100);
-                animation.setRepeatMode(Animation.RESTART);
+                animation.setDuration(1000);
+                animation.setRepeatMode(Animation.REVERSE);
                 animation.setRepeatCount(100);
                 mImageView.startAnimation(animation);
                 Log.d(TAG, "onClick: main_btn_alpha startAnimation");
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_btn_start_activity:
                 Intent intent = new Intent(this,Main2Activity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_in,R.anim.rotate);
                 break;
         }
         if (animation!=null){
