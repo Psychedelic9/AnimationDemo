@@ -18,17 +18,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mScaleAnimation,mAlphaAnimation,mRotateAnimation,mTranslateAnimation;
     private ImageView mImageView;
     private Animation animation;
+    private long start;
+    private long end;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        start = System.currentTimeMillis();
         setContentView(R.layout.activity_main);
         mScaleAnimation = findViewById(R.id.main_btn_scale);
         mAlphaAnimation = findViewById(R.id.main_btn_alpha);
         mRotateAnimation = findViewById(R.id.main_btn_rotate);
         mTranslateAnimation = findViewById(R.id.main_btn_move);
         mImageView = findViewById(R.id.image_view);
+        for (int i = 0;i<200;i++){
+            String str = "str = "+i;
+        }
 
     }
+
 
     @Override
     public void onClick(View v) {
